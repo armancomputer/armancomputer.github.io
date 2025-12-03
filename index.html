@@ -1,146 +1,627 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <title>Arman Computer | Cox's Bazar</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Arman Computer - Computer accessories, repair, and services in Cox's Bazar, Bangladesh.">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2721/2721269.png">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #0a0a23;
-    }
-    #bg3d {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      z-index: 1;
-    }
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: rgba(10,10,35,0.55);
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    .title {
-      font-size: 2.5rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 2px 16px #0008;
-    }
-    .subtitle {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: #b3b3ff;
-      text-shadow: 0 1px 8px #0006;
-    }
-    .fb-btn {
-      display: inline-block;
-      background: #4267B2;
-      color: #fff;
-      padding: 0.8rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 12px #0004;
-      transition: background 0.2s;
-    }
-    .fb-btn:hover {
-      background: #29487d;
-    }
-    .map-frame {
-      border: none;
-      border-radius: 12px;
-      width: 320px;
-      height: 220px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-      margin-top: 1.5rem;
-      max-width: 90vw;
-    }
-    @media (max-width: 600px) {
-      .title { font-size: 1.5rem; }
-      .subtitle { font-size: 1rem; }
-      .map-frame { width: 95vw; height: 180px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arman Computer - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated Gradient Background */
+        .bg-gradient {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            opacity: 0.9;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Grid Pattern Overlay */
+        .grid-overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Floating Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.6;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            top: -150px;
+            left: -150px;
+            animation-delay: 0s;
+        }
+
+        .orb2 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            bottom: -200px;
+            right: -200px;
+            animation-delay: 5s;
+        }
+
+        .orb3 {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            top: 50%;
+            right: 10%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(50px, -50px) scale(1.1);
+            }
+            50% {
+                transform: translate(-30px, 30px) scale(0.9);
+            }
+            75% {
+                transform: translate(40px, 20px) scale(1.05);
+            }
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            z-index: 10;
+            padding: 40px;
+            max-width: 900px;
+            position: relative;
+        }
+
+        /* Glass Card Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 60px 40px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            animation: cardFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .logo-ring {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: ringPulse 2s ease-in-out infinite;
+        }
+
+        .logo-ring:nth-child(2) {
+            animation-delay: 0.5s;
+            width: 160px;
+            height: 160px;
+        }
+
+        @keyframes ringPulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.3;
+            }
+        }
+
+        .logo {
+            font-size: 3em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 2;
+            letter-spacing: 2px;
+        }
+
+        .logo-icon {
+            display: inline-block;
+            font-size: 1.5em;
+            margin-right: 15px;
+            animation: iconSpin 4s linear infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+        }
+
+        @keyframes iconSpin {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            margin: 20px 0 40px;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .coming-soon-wrapper {
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .coming-soon {
+            font-size: 4.5em;
+            font-weight: 900;
+            background: linear-gradient(45deg, #fff, #f0f0f0, #fff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textShine 3s ease-in-out infinite;
+            letter-spacing: 5px;
+            position: relative;
+        }
+
+        @keyframes textShine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .coming-soon::before {
+            content: 'COMING SOON';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: transparent;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { opacity: 0.5; filter: blur(5px); }
+            to { opacity: 1; filter: blur(10px); }
+        }
+
+        .description {
+            font-size: 1.25em;
+            margin: 30px 0;
+            line-height: 1.9;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .description-highlight {
+            color: #4facfe;
+            font-weight: 600;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            padding: 25px 35px;
+            border-radius: 20px;
+            min-width: 130px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown-number {
+            font-size: 3.5em;
+            font-weight: bold;
+            display: block;
+            background: linear-gradient(135deg, #fff, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .countdown-label {
+            font-size: 1em;
+            opacity: 0.9;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9em;
+        }
+
+        .social-links {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-8px) scale(1.15) rotate(5deg);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+
+        .social-icon:hover::before {
+            opacity: 1;
+        }
+
+        .social-icon span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info {
+            margin-top: 50px;
+            font-size: 1.1em;
+            opacity: 0.9;
+            line-height: 2;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            padding-bottom: 2px;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: #4facfe;
+            color: #4facfe;
+        }
+
+        .features {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .feature-text {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .glass-card {
+                padding: 40px 20px;
+            }
+            .logo {
+                font-size: 2em;
+            }
+            .coming-soon {
+                font-size: 2.5em;
+                letter-spacing: 3px;
+            }
+            .tagline {
+                font-size: 1.1em;
+            }
+            .countdown-item {
+                min-width: 100px;
+                padding: 20px 25px;
+            }
+            .countdown-number {
+                font-size: 2.5em;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container > * {
+            animation: fadeInUp 1s ease-out backwards;
+        }
+
+        .logo-container { animation-delay: 0.2s; }
+        .tagline { animation-delay: 0.4s; }
+        .coming-soon-wrapper { animation-delay: 0.6s; }
+        .description { animation-delay: 0.8s; }
+        .countdown { animation-delay: 1s; }
+        .features { animation-delay: 1.2s; }
+        .social-links { animation-delay: 1.4s; }
+        .contact-info { animation-delay: 1.6s; }
+    </style>
 </head>
 <body>
-  <canvas id="bg3d"></canvas>
-  <div class="overlay">
-    <div class="title">Arman Computer</div>
-    <div class="subtitle">
-      All kinds of computer accessories, repair, and services in Momtaz Shopping Complex,Idgaon Bus Station,Cox's Bazar, Bangladesh.<br>
-      <span style="font-size:1rem; color:#fff;">Visit us or connect online!</span>
+    <div class="bg-gradient"></div>
+    <div class="grid-overlay"></div>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+
+    <div class="container">
+        <div class="glass-card">
+            <div class="logo-container">
+                <div class="logo-ring"></div>
+                <div class="logo-ring"></div>
+                <div class="logo">
+                    <span class="logo-icon">💻</span>
+                    ARMAN COMPUTER
+                </div>
+            </div>
+            
+            <div class="tagline">
+                Your Trusted Computer & IT Solutions Partner in Bangladesh
+            </div>
+
+            <div class="coming-soon-wrapper">
+                <div class="coming-soon">COMING SOON</div>
+            </div>
+
+            <div class="description">
+                আমরা শীঘ্রই আসছি <span class="description-highlight">সর্বশেষ প্রযুক্তি</span> নিয়ে।<br>
+                কম্পিউটার, ল্যাপটপ, এবং আইটি সমাধানে বাংলাদেশের বিশ্বস্ত নাম।
+            </div>
+
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-item">
+                    <span class="feature-icon">🖥️</span>
+                    <div class="feature-text">Latest Computers</div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💻</span>
+                    <div class="feature-text">Premium Laptops</div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🛠️</span>
+                    <div class="feature-text">Expert Support</div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">⚡</span>
+                    <div class="feature-text">Fast Delivery</div>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <div class="social-icon" onclick="window.open('https://facebook.com/armancomputers', '_blank')" title="Facebook">
+                    <span>📘</span>
+                </div>
+                <div class="social-icon" onclick="window.location.href='mailto:info@armancomputer.com.bd'" title="Email">
+                    <span>✉️</span>
+                </div>
+                <div class="social-icon" onclick="window.location.href='tel:+8801836038848'" title="Phone">
+                    <span>📞</span>
+                </div>
+                <div class="social-icon" onclick="window.open('https://wa.me/8801836038848', '_blank')" title="WhatsApp">
+                    <span>💬</span>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                📍 Cox's Bazar, Chittagong, Bangladesh<br>
+                📧 <a href="mailto:info@armancomputer.com.bd">info@armancomputer.com.bd</a><br>
+                📱 <a href="tel:+8801836038848">+880 1836-038848</a>
+            </div>
+        </div>
     </div>
-    <a class="fb-btn" href="https://fb.com/armancomputers" target="_blank" rel="noopener">
-      Visit Our Facebook Page
-    </a>
-    <iframe
-      class="map-frame"
-      title="Arman Computer Location"
-      src="https://www.google.com/maps?q=Arman+Computer+Cox's+Bazar+Bangladesh&output=embed"
-      allowfullscreen=""
-      loading="lazy">
-    </iframe>
-  </div>
-  <!-- Three.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
-  <script>
-    // 3D Torus Knot Animation
-    const canvas = document.getElementById('bg3d');
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x0a0a23, 1);
 
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-    camera.position.z = 4;
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            // Launch date - change this to your desired date
+            const launchDate = new Date('2025-02-01T00:00:00').getTime();
+            
+            const timer = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = launchDate - now;
 
-    // Torus Knot
-    const geometry = new THREE.TorusKnotGeometry(1, 0.3, 120, 16);
-    const material = new THREE.MeshStandardMaterial({ color: 0x6c63ff, metalness: 0.7, roughness: 0.2 });
-    const torusKnot = new THREE.Mesh(geometry, material);
-    scene.add(torusKnot);
+                // If countdown is finished
+                if (distance < 0) {
+                    clearInterval(timer);
+                    const comingSoonEl = document.querySelector('.coming-soon');
+                    const countdownEl = document.querySelector('.countdown');
+                    if (comingSoonEl) {
+                        comingSoonEl.textContent = 'NOW LIVE!';
+                    }
+                    if (countdownEl) {
+                        countdownEl.innerHTML = '<div style="font-size: 2em; padding: 40px;">🎉 আমরা এখন লাইভ! 🎉</div>';
+                    }
+                    return;
+                }
 
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
-    scene.add(ambientLight);
-    const pointLight = new THREE.PointLight(0xffffff, 1);
-    pointLight.position.set(5, 5, 5);
-    scene.add(pointLight);
+                // Calculate time units
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Responsive resize
-    window.addEventListener('resize', () => {
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-    });
+                // Update the countdown display
+                const daysEl = document.getElementById('days');
+                const hoursEl = document.getElementById('hours');
+                const minutesEl = document.getElementById('minutes');
+                const secondsEl = document.getElementById('seconds');
 
-    // Animation loop
-    function animate() {
-      requestAnimationFrame(animate);
-      torusKnot.rotation.x += 0.01;
-      torusKnot.rotation.y += 0.012;
-      renderer.render(scene, camera);
-    }
-    animate();
-  </script>
+                if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+                if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+                if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+                if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+            }, 1000);
+        }
+
+        // Initialize when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            updateCountdown();
+
+            // Add smooth mouse parallax effect
+            document.addEventListener('mousemove', (e) => {
+                const orbs = document.querySelectorAll('.orb');
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                orbs.forEach((orb, index) => {
+                    const speed = (index + 1) * 20;
+                    const xMove = (x - 0.5) * speed;
+                    const yMove = (y - 0.5) * speed;
+                    orb.style.transform = `translate(${xMove}px, ${yMove}px)`;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
